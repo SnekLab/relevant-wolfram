@@ -1,5 +1,5 @@
 const snekfetch = require('snekfetch');
-const { BASE_URL, RESPONSE } = require('./Constants');
+const { BASE_URL } = require('./Constants');
 
 class Wolfram {
     constructor(appId) {
@@ -7,15 +7,15 @@ class Wolfram {
         this.appId = appId;
     }
 
-    query(query, options = {}) {
+    query(query) {
         return new snekfetch('GET', `${BASE_URL}/v2/query`)
 	.query({
-appid: this.key,
-input: encodeURIComponent(query)
-primary: true,
-output: 'json'
+    appid: this.key,
+    input: encodeURIComponent(query),
+    primary: true,
+    output: 'json'
 })
-        .then(res => res.body && res.body.queryresult.success ? res.body : Promise.reject(TypeError('no results')));
+    .then(res => res.body && res.body.queryresult.success ? res.body : Promise.reject(TypeError('no results')));
     }
     
     get key() {
