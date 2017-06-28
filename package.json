@@ -1,0 +1,35 @@
+{
+     "name": "relevant-wolfram",
+     "version": "1.0.0",
+     "description": "Wolfram API wrapper made for everyone with useful methods using promises and snekfetch",
+     "main": "wolfram.js",
+     "author": "MrSakamoto-san",
+     "license": "MIT",
+     "keywords": [
+          "wolfram",
+          "api",
+          "knowledge"
+          "relevant",
+          "sneklab"
+     ],
+     "dependencies": {
+          "snekfetch": "^3.0.1"
+     },
+     "devDependencies": {
+          "ava": "^0.19.1",
+          "eslint": "^3.19.0"
+     },
+     "scripts": {
+          "test": "npm run lint && npm run check",
+          "lint": "eslint wolfram.js Constants.js test/",
+          "lint:fix": "eslint --fix wolfram.js Constants.js test/",
+          "check": "ava -v"
+     },
+     "repository": {
+          "type": "git",
+          "url": "https://github.com/SnekLab/relevant-wolfram.git"
+     },
+     "bugs": {
+          "url": "https://github.com/SnekLab/relevant-wolfram/issues"
+     }
+}
